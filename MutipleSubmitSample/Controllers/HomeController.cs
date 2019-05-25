@@ -8,11 +8,14 @@ namespace MutipleSubmitSample.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("~/Index")]
         public ActionResult Index()
         {
+            ViewBag.Message = TempData["Message"];
             return View();
         }
 
+        [Route("~/About")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,6 +23,7 @@ namespace MutipleSubmitSample.Controllers
             return View();
         }
 
+        [Route("~/Contact")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
